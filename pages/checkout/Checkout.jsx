@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Container, Box, Grid, FormControlLabel } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import checkout from "../checkout/Checkout.module.css";

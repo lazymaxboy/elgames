@@ -1,6 +1,7 @@
 import { Container } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
+import { selectUser } from "../../store/feature/auth/auth.slice";
 import { selectAllProducts } from "../../store/feature/games/games.slice";
 import home from "../home/HomePage.module.css";
 import Categories from "./categories/Categories";
@@ -15,6 +16,8 @@ import Service from "./service/Service";
 
 const HomePage = () => {
   const games = useSelector(selectAllProducts);
+  const user = useSelector(selectUser);
+  console.log(user);
   return (
     <div>
       <section className={home["section-sldier"]}>

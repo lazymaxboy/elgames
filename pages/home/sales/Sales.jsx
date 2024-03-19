@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Sales = () => {
   const [countdownDate, setCountdownDate] = useState(
-    new Date("09/09/2023").getTime()
+    new Date("27/02/2027").getTime()
   );
   const [state, setState] = useState({
     days: 0,
@@ -38,13 +38,13 @@ const Sales = () => {
 
       const numbersToAddZeroTo = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-      days = `${days}`;
+      days = days >= 0 ? `${days}` : 0;
       if (numbersToAddZeroTo.includes(hours)) {
-        hours = `0${hours}`;
+        hours = hours >= 0 ? `0${hours}` : 0;
       } else if (numbersToAddZeroTo.includes(minutes)) {
-        minutes = `0${minutes}`;
+        minutes = minutes >= 0 ? `0${minutes}` : 0;
       } else if (numbersToAddZeroTo.includes(seconds)) {
-        seconds = `0${seconds}`;
+        seconds = seconds >= 0 ? `0${seconds}` : 0;
       }
 
       setState({ days: days, hours: hours, minutes, seconds });
@@ -58,7 +58,7 @@ const Sales = () => {
         style={{
           width: "100%",
           verticalAlign: "middle",
-          objectFit: 'cover',
+          objectFit: "cover",
           minHeight: "400px",
           filter: "brightness(50%)",
         }}
